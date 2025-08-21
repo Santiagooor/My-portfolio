@@ -1,776 +1,238 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth"> <!-- <--- Scroll suave aquí -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acrux - Agencia de Marketing Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.umd.js"></script>
-    <meta name="description" content="Acrux - Agencia de Marketing Digital. Hacemos brillar tu presencia digital con creatividad, estrategia y resultados.">
-    <meta name="theme-color" content="#7c3aed">
-    <link rel="icon" href="https://placehold.co/32x32/7c3aed/fff?text=A" type="image/png">
-    <style>
-        /* Servicios: desenfoque y resalte */
-.service-blur {
-    filter: blur(3px) grayscale(0.3) brightness(0.8);
-    opacity: 0.5;
-    pointer-events: none;
-    transition: filter 0.4s, opacity 0.4s;
-}
-.service-active {
-    box-shadow: 0 0 0 4px #a78bfa, 0 8px 32px 0 rgba(87,34,210,0.2);
-    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-    color: #fff;
-    transform: scale(1.04);
-    opacity: 1 !important;
-    filter: none !important;
-    pointer-events: auto;
-    transition: box-shadow 0.4s, background 0.4s, transform 0.4s;
-}
-.service-active .text-purple-900,
-.service-active .text-gray-700,
-.service-active .text-purple-600 {
-    color: #fff !important;
-}
-.service-active .service-description {
-    color: #fff !important;
-}
-.service-active .service-link span {
-    color: #fff !important;
-}
-.service-active .service-link i {
-    color: #fff !important;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Santiago Ramírez</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-/* Mejoras de experiencia y animaciones */
-html {
-    scroll-behavior: smooth;
-}
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Navbar sticky shadow */
-nav.bg-black {
-    box-shadow: 0 2px 16px 0 rgba(87,34,210,0.08);
-}
-/* Botón WhatsApp animado */
-.whatsapp-float {
-    animation: bounce 2s infinite;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0);}
-    50% { transform: translateY(-8px);}
-}
-/* Card hover efecto glass */
-.service-card {
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 0.3s;
-}
-.service-card:hover {
-    backdrop-filter: blur(2px);
-}
-/* Footer mejora */
-footer {
-    box-shadow: 0 -2px 16px 0 rgba(87,34,210,0.08);
-}
-    </style>
 </head>
-<body class="font-sans bg-black text-white overflow-x-hidden">
-    <!-- Navbar -->
-    <nav class="bg-black fixed w-full top-0 z-50 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 sm:h-20 items-center">
-                <!-- Título ACRUX a la izquierda (sin icono) -->
-                <a href="#" class="flex items-center font-cinzel text-2xl font-bold text-white hover:text-purple-400 transition-colors duration-300 transform hover:scale-105">
-                  ACRUX
-                </a>
+<body class="bg-gray-950 text-white font-sans">
 
-                <!-- Menú a la derecha -->
-                <div class="flex items-center">
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#nosotros" class="border-transparent text-gray-300 hover:text-white hover:border-purple-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-300 ease-in-out">
-                            Nosotros
-                        </a>
-                        <a href="#hacemos-brillar" class="border-transparent text-gray-300 hover:text-white hover:border-purple-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-300 ease-in-out">
-                            Hacemos Brillar
-                        </a>
-                        <a href="#servicios" class="border-transparent text-gray-300 hover:text-white hover:border-purple-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-300 ease-in-out">
-                            Servicios
-                        </a>
-                        <a href="#contacto"
-                           class="border-transparent text-black bg-purple-500 hover:bg-purple-400 hover:text-black inline-flex items-center px-4 py-2 rounded font-semibold shadow transition-all duration-300 ease-in-out border-b-2 border-purple-500 hover:border-purple-400 transform hover:scale-105">
-                            Contacto
-                        </a>
-                    </div>
-                    <div class="flex items-center sm:hidden">
-                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300 ease-in-out" id="mobile-menu-btn">
-                            <span class="sr-only">Open main menu</span>
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu -->
-        <div class="sm:hidden hidden" id="mobile-menu">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#nosotros" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:border-purple-500 transition-all duration-300 ease-in-out">
-                    Nosotros
-                </a>
-                <a href="#hacemos-brillar" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:border-purple-500 transition-all duration-300 ease-in-out">
-                    Hacemos Brillar
-                </a>
-                <a href="#servicios" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:border-purple-500 transition-all duration-300 ease-in-out">
-                    Servicios
-                </a>
-                <a href="#contacto"
-                   class="block pl-3 pr-4 py-2 border-l-4 border-purple-500 text-base font-semibold text-black bg-purple-500 rounded hover:bg-purple-400 transition-all duration-300 ease-in-out transform hover:scale-105">
-                    Contacto
-                </a>
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <header class="w-full fixed top-0 z-50 bg-gray-900 shadow">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-cyan-400">Santiago Ramírez</h1>
+      <ul class="hidden md:flex space-x-6 text-white font-medium">
+        <li><a href="#inicio" class="hover:text-cyan-400">Inicio</a></li>
+        <li><a href="#sobre-mi" class="hover:text-cyan-400">Sobre mí</a></li>
+        <li><a href="#servicios" class="hover:text-cyan-400">Servicios</a></li>
+        <li><a href="#proyectos" class="hover:text-cyan-400">Proyectos</a></li>
+        <li><a href="#contacto" class="hover:text-cyan-400">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="pt-24 sm:pt-28 pb-16 sm:pb-24 bg-gradient-to-r from-purple-900 to-purple-600 relative overflow-hidden fade-in" id="hero">
-        <!-- Animated background elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-500"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-                <div class="lg:col-span-6 flex flex-col justify-center fade-in">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6">
-                        <span class="block">Hacemos brillar</span>
-                        <span class="block text-purple-200">tu presencia digital</span>
-                    </h1>
-                    <p class="mt-6 text-base sm:text-lg md:text-xl text-purple-100 mb-8">
-                        Somos Acrux, fundada en 2025 por jóvenes egresados de marketing digital y diseño gráfico con el propósito de comenzar en el mundo del marketing digital y ser financieramente independientes.
-                    </p>
-                    <div class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
-                        <div class="rounded-md shadow-lg transform transition-transform duration-300 hover:scale-105">
-                            <a href="#contacto" class="w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-500 hover:bg-purple-400 md:py-4 md:text-lg md:px-10 transition-all duration-300 ease-in-out transform hover:scale-105">
-                                ¡Quiero hacer brillar mi marca!
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 sm:mt-12 lg:mt-0 lg:col-span-6 flex items-center justify-center fade-in">
-                    <div class="relative w-full max-w-xs sm:max-w-md lg:max-w-lg rounded-lg shadow-xl transform transition-transform duration-500 hover:scale-105">
-                        <video src="img/A_5 (1).mp4" class="w-full h-auto rounded-lg" autoplay muted loop poster="https://placehold.co/600x400/5722D2/FFFFFF?text=Acrux+Agencia"></video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nosotros Section -->
-    <section id="nosotros" class="py-16 sm:py-24 bg-white relative overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
-                <div class="lg:col-span-6">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Quiénes somos</h2>
-                    <p class="text-gray-700 mb-4 text-base sm:text-lg leading-relaxed">
-                        Somos Acrux, fundada en 2025 por jóvenes egresados de marketing digital y diseño gráfico con el propósito de comenzar en el mundo del marketing digital y ser financieramente independientes y poder trabajar de lo que realmente nos apasiona.
-                    </p>
-                    <p class="text-gray-700 mb-4 text-base sm:text-lg leading-relaxed">
-                        Acrux es la estrella más brillante del hemisferio sur, históricamente utilizada como referencia por los navegantes. Elegimos este nombre porque refleja nuestra misión: ser una guía confiable para las marcas que trabajan con nosotros, orientándolas en su rumbo digital para alcanzar sus objetivos.
-                    </p>
-                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
-                        Nuestra visión es ser reconocidos como la brújula confiable para las organizaciones, liderando el rumbo hacia el éxito en el mundo digital con innovación, profesionalismo y cercanía humana.
-                    </p>
-                </div>
-                <div class="mt-8 sm:mt-12 lg:mt-0 lg:col-span-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-purple-100 p-6 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                            <h3 class="text-xl font-semibold text-purple-900 mb-2">Misión</h3>
-                            <p class="text-gray-700 leading-relaxed">Guiar y potenciar marcas en su camino digital, brindando estrategias creativas, tecnológicas y orientadas a resultados que fortalezcan su presencia y conexión con su audiencia.</p>
-                        </div>
-                        <div class="bg-purple-100 p-6 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                            <h3 class="text-xl font-semibold text-purple-900 mb-2">Valores</h3>
-                            <p class="text-gray-700 leading-relaxed">Confianza, Profesionalismo, Creatividad, Estrategia y Cercanía Humana.</p>
-                        </div>
-                        <div class="bg-purple-100 p-6 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                            <h3 class="text-xl font-semibold text-purple-900 mb-2">Visión</h3>
-                            <p class="text-gray-700 leading-relaxed">Ser reconocidos como la brújula confiable para las organizaciones, liderando el rumbo hacia el éxito en el mundo digital.</p>
-                        </div>
-                        <div class="bg-purple-100 p-6 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                            <h3 class="text-xl font-semibold text-purple-900 mb-2">Fundadores</h3>
-                            <p class="text-gray-700 leading-relaxed">Jóvenes egresados de marketing digital y diseño gráfico.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hacemos Brillar Section -->
-    <section id="hacemos-brillar" class="py-16 sm:py-24 bg-gradient-to-r from-purple-900 to-purple-600 relative overflow-hidden fade-in">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-20 -left-20 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Hacemos brillar tu marca</h2>
-                <p class="text-purple-100 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                    Con nuestro enfoque estratégico y creativo, transformamos tu presencia digital en una experiencia memorable para tu audiencia.
-                </p>
-            </div>
-            <div class="mt-8 sm:mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                <!-- Card ejemplo, repite para los otros -->
-                <div class="bg-purple-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 group fade-in">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-bullseye text-white text-2xl transition-all duration-300"></i>
-                        <div class="absolute inset-0 bg-white opacity-10 rounded-full transition-all duration-300"></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Estrategia</h3>
-                    <p class="text-purple-200 leading-relaxed">Acciones con propósito, objetivos claros y métricas.</p>
-                </div>
-                <div class="bg-purple-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 group fade-in">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-lightbulb text-white text-2xl transition-all duration-300"></i>
-                        <div class="absolute inset-0 bg-white opacity-10 rounded-full transition-all duration-300"></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Creatividad</h3>
-                    <p class="text-purple-200 leading-relaxed">Soluciones únicas que destacan tu marca.</p>
-                </div>
-                <div class="bg-purple-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 group fade-in">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-handshake text-white text-2xl transition-all duration-300"></i>
-                        <div class="absolute inset-0 bg-white opacity-10 rounded-full transition-all duration-300"></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Cercanía</h3>
-                    <p class="text-purple-200 leading-relaxed">Escuchamos, acompañamos y entendemos tu negocio.</p>
-                </div>
-                <div class="bg-purple-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 group fade-in">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-chart-line text-white text-2xl transition-all duration-300"></i>
-                        <div class="absolute inset-0 bg-white opacity-10 rounded-full transition-all duration-300"></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Resultados</h3>
-                    <p class="text-purple-200 leading-relaxed">Transparencia and resultados reales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Section -->
-    <section id="servicios" class="py-16 sm:py-24 bg-white relative overflow-hidden fade-in">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Nuestros Servicios</h2>
-                <p class="text-gray-700 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                    Ofrecemos soluciones integrales para fortalecer tu presencia digital y conectar con tu audiencia.
-                </p>
-            </div>
-            <div id="servicios-list" class="mt-8 sm:mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Aplica cursor-pointer a cada card -->
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="plan-marketing">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Plan de Marketing</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Desarrollamos estrategias completas para posicionar tu marca en el mercado digital.</p>
-                    <!-- Elimina el "Ver más" y haz que el card sea clickable -->
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Desarrollamos planes de marketing estratégicos personalizados que se alinean con tus objetivos de negocio. Nuestro enfoque combina análisis de mercado, definición de KPIs y tácticas digitales efectivas.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Diagnóstico de situación actual</li>
-                            <li>Análisis de mercado y competencia</li>
-                            <li>Definición de objetivos y KPIs</li>
-                            <li>Estrategia de posicionamiento</li>
-                            <li>Plan de contenidos</li>
-                            <li>Presupuesto y cronograma</li>
-                        </ul>
-                        <p>Incluye reportes de seguimiento mensuales para medir el rendimiento y ajustar estrategias según sea necesario.</p>
-                    </div>
-                </div>
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="gestion-redes">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Gestión de Redes Sociales</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Creamos contenido atractivo y gestionamos tus redes sociales para aumentar tu alcance.</p>
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Gestionamos tus redes sociales con contenido estratégico y creativo que conecta con tu audiencia. Trabajamos en Instagram, Facebook, LinkedIn, TikTok y otras plataformas relevantes para tu negocio.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Creación de calendario editorial</li>
-                            <li>Diseño gráfico y producción de videos</li>
-                            <li>Community management</li>
-                            <li>Publicidad en redes sociales</li>
-                            <li>Reportes de métricas y análisis</li>
-                            <li>Interacción con seguidores</li>
-                        </ul>
-                        <p>Enfocamos nuestros esfuerzos en aumentar tu engagement, alcance y conversión de seguidores en clientes.</p>
-                    </div>
-                </div>
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="branding">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Branding - Rebranding</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Creamos o renovamos tu identidad visual para que destaquen en el mercado.</p>
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Desarrollamos o renovamos tu identidad de marca para que conecte con tu audiencia y te diferencie de la competencia. Nuestro proceso combina estrategia, diseño y psicología del consumidor.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Definición de personalidad de marca</li>
-                            <li>Desarrollo de logo y sistema de identidad</li>
-                            <li>Paleta de colores y tipografía</li>
-                            <li>Voz y tono de comunicación</li>
-                            <li>Manual de marca</li>
-                            <li>Aplicación en todos los puntos de contacto</li>
-                        </ul>
-                        <p>Creemos que una marca fuerte genera confianza, permite cobrar precios premium y crea lealtad entre los clientes.</p>
-                    </div>
-                </div>
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="sitios-web">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Sitios Web</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Desarrollo de sitios web profesionales en HTML, CSS, JS, WordPress, Shopify y tiendas en línea.</p>
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Desarrollamos sitios web modernos, responsivos y optimizados para convertir visitantes en clientes. Utilizamos las tecnologías más avanzadas para garantizar velocidad, seguridad y escalabilidad.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Sitios estáticos en HTML, CSS, JavaScript</li>
-                            <li>Plataformas CMS como WordPress</li>
-                            <li>Tiendas online en Shopify, Tienda Nube</li>
-                            <li>Diseño responsive para todos los dispositivos</li>
-                            <li>Optimización para SEO</li>
-                            <li>Integración con herramientas de marketing</li>
-                        </ul>
-                        <p>Nuestros sitios web están diseñados para cargar rápido, ofrecer una excelente experiencia de usuario y convertir visitantes en leads o clientes.</p>
-                    </div>
-                </div>
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="contenidos">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Contenidos</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Producción de contenidos creativos y estratégicos para cada canal digital.</p>
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Producimos contenido de alta calidad que atrae, educa y convierte a tu audiencia. Nuestro equipo combina creatividad, conocimiento del mercado y estrategia digital para crear piezas efectivas.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Redacción de textos para web y redes sociales</li>
-                            <li>Producción de videos y fotografías</li>
-                            <li>Copywriting persuasivo</li>
-                            <li>Contenido para email marketing</li>
-                            <li>Guiones para redes sociales</li>
-                            <li>Blog posts y artículos de autoridad</li>
-                        </ul>
-                        <p>Todo nuestro contenido está alineado con tu estrategia de marca y diseñado para generar engagement, posicionar tu expertise y convertir leads en clientes.</p>
-                    </div>
-                </div>
-                <div class="bg-purple-100 p-6 rounded-lg service-card w-full max-w-md mx-auto sm:mx-0 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" data-service="publicidad-digital">
-                    <h3 class="text-xl font-semibold text-purple-900 mb-4">Meta Ads & Google Ads</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Campañas publicitarias efectivas en Facebook, Instagram y Google para maximizar tu ROI.</p>
-                    <div class="service-description mt-4 text-gray-700 hidden leading-relaxed">
-                        <p class="mb-3">Gestionamos campañas publicitarias en Meta (Facebook e Instagram) y Google Ads para maximizar tu retorno de inversión. Nuestro enfoque combina creatividad, segmentación precisa y optimización constante.</p>
-                        <ul class="list-disc list-inside mb-3">
-                            <li>Creación y gestión de campañas</li>
-                            <li>Segmentación de audiencias</li>
-                            <li>Creación de creativos publicitarios</li>
-                            <li>Retargeting y remarketing</li>
-                            <li>Optimización de conversiones</li>
-                            <li>Reportes detallados de desempeño</li>
-                        </ul>
-                        <p>Enfocamos nuestros esfuerzos en generar leads de calidad, aumentar ventas y maximizar tu ROI, con transparencia total en resultados y presupuesto.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section id="contacto" class="py-16 sm:py-24 bg-gradient-to-r from-purple-900 to-purple-600 relative overflow-hidden fade-in">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-20 -left-20 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
-                <div class="lg:col-span-6 fade-in">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Contáctanos</h2>
-                    <p class="text-purple-100 mb-8 text-base sm:text-lg leading-relaxed">
-                        Estamos aquí para ayudarte a hacer brillar tu presencia digital. Llena el formulario y uno de nuestros especialistas se pondrá en contacto contigo pronto.
-                    </p>
-                    <form action="https://formspree.io/f/mkgzeqvw" method="POST" class="space-y-6">
-                        <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
-                            <div>
-                                <label for="nombre" class="block text-sm font-medium text-purple-100">Nombre</label>
-                                <div class="mt-1">
-                                    <input type="text" name="nombre" id="nombre" autocomplete="given-name"
-                            class="py-3 px-4 block w-full shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-300 ease-in-out transform focus:scale-[1.01] focus:shadow-lg"
-                            required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="apellido" class="block text-sm font-medium text-purple-100">Apellido</label>
-                                <div class="mt-1">
-                                    <input type="text" name="apellido" id="apellido" autocomplete="family-name"
-                            class="py-3 px-4 block w-full shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-300 ease-in-out transform focus:scale-[1.01] focus:shadow-lg"
-                            required>
-                                </div>
-                            </div>
-                            <div class="sm:col-span-2">
-                                <label for="correo" class="block text-sm font-medium text-purple-100">Correo Electrónico</label>
-                                <div class="mt-1">
-                                    <input type="email" name="correo" id="correo" autocomplete="email"
-                            class="py-3 px-4 block w-full shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-300 ease-in-out transform focus:scale-[1.01] focus:shadow-lg"
-                            required>
-                                </div>
-                            </div>
-                            <div class="sm:col-span-2">
-                                <label for="mensaje" class="block text-sm font-medium text-purple-100">Mensaje</label>
-                                <div class="mt-1">
-                                    <textarea name="mensaje" id="mensaje" rows="4"
-                            class="py-3 px-4 block w-full shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-300 ease-in-out transform focus:scale-[1.01] focus:shadow-lg"
-                            required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button type="submit"
-    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-purple-500 hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300 ease-in-out transform hover:scale-105">
-    Enviar Mensaje
-</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="mt-8 sm:mt-12 lg:mt-0 lg:col-span-6 fade-in">
-                    <div class="bg-purple-800 p-6 sm:p-8 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                        <h3 class="text-2xl font-bold text-white mb-6">Información de Contacto</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-purple-200 text-xl animate-pulse"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-purple-100">Dirección</p>
-                                    <p class="text-purple-200">Córdoba, Argentina</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-envelope text-purple-200 text-xl animate-pulse"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-purple-100">Email</p>
-                                    <p class="text-purple-200">acruxdigitalmkt@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-phone text-purple-200 text-xl animate-pulse"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-purple-100">Teléfono</p>
-                                    <p class="text-purple-200">+54 9 3516560028</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white relative overflow-hidden fade-in">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:divide-x md:divide-purple-100">
-                <div class="flex flex-col items-center md:items-start px-0 md:px-6">
-                    <span class="text-2xl font-bold text-purple-900 mb-4">ACRUX</span>
-                    <p class="text-gray-700 text-center md:text-left text-base leading-relaxed">
-                        Acrux es la estrella más brillante del hemisferio sur, históricamente utilizada como referencia por los navegantes. Elegimos este nombre porque refleja nuestra misión: ser una guía confiable para las marcas que trabajan con nosotros, orientándolas en su rumbo digital para alcanzar sus objetivos.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center md:items-start px-0 md:px-6">
-                    <h3 class="text-lg font-semibold text-purple-900 mb-4">Servicios</h3>
-                    <ul class="space-y-2 text-base">
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Plan de Marketing</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Gestión de Redes</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Contenidos</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Branding</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Sitios Web</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-300">Publicidad Digital</a></li>
-                    </ul>
-                </div>
-                <div class="flex flex-col items-center md:items-start px-0 md:px-6">
-                    <h3 class="text-lg font-semibold text-purple-900 mb-4">Redes Sociales</h3>
-                    <div class="flex space-x-6 justify-center md:justify-start mb-2">
-                        <a href="https://www.instagram.com/acruxdigitalmkt" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-900 transition-colors duration-300 transform hover:scale-110">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="https://www.facebook.com/acruxdigitalmkt" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-900 transition-colors duration-300 transform hover:scale-110">
-                            <i class="fab fa-facebook text-2xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/acruxdigitalmkt" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-900 transition-colors duration-300 transform hover:scale-110">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-gray-700 text-center md:text-left text-base mt-2">Síguenos para más novedades.</p>
-                </div>
-            </div>
-            <div class="mt-10 pt-8 border-t border-purple-100">
-                <p class="text-center text-gray-700 text-sm sm:text-base">
-                    &copy; 2025 Acrux. Todos los derechos reservados.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Botón WhatsApp flotante mejorado -->
-    <a
-      href="https://wa.me/5493875233676" 
-      target="_blank"
-      class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-white text-white hover:text-green-500 border-2 border-green-500 rounded-full p-3 shadow-lg transition duration-300 whatsapp-float"
-      aria-label="Chat en WhatsApp"
-      title="¡Escríbenos por WhatsApp!"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.884.002-5.462-4.415-9.89-9.881-9.892-5.45 0-9.887 4.433-9.89 9.883-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.743-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.668.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.075-.149-.668-1.611-.916-2.207-.242-.579-.487-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413z"/>
-      </svg>
+   <!-- Inicio -->
+<section id="inicio" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 py-16 bg-[#0e1012] text-white">
+  <!-- Texto -->
+  <div class="text-center md:text-left max-w-xl">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Hola, soy <span class="text-cyan-400">Santiago Ramírez</span>
+    </h1>
+    <p class="text-lg text-gray-300 mb-6">
+      Técnico en Marketing Digital & Desarrollador Web. Ayudo a emprendedores y pymes a tener presencia online con estrategia y diseño.
+    </p>
+    <a href="#contacto" class="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg shadow hover:bg-cyan-300 transition font-semibold">
+      Hablemos
     </a>
+  </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+  <!-- Foto -->
+  <div>
+    <img
+      src="img/Yo.jpg"
+      alt="Santiago Ramírez"
+      class="w-48 h-48 md:w-60 md:h-60 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl border-4 border-cyan-400"
+    />
+  </div>
+</section>
 
-        // Mostrar/ocultar menú hamburguesa en móvil
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="pt-20 px-6">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Sobre mí</h2>
 
-        // Mostrar solo un servicio como principal y desenfocar los demás (ahora el card entero es clickable)
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Evita que el click en la descripción cierre el card
-                if (e.target.closest('.service-description')) return;
+    <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
+      <!-- DESCRIPCIÓN -->
+      <div class="text-center md:text-left">
+        <p class="text-lg">
+          ¡Hola! Soy <strong>Santiago Ramírez</strong>, técnico en marketing digital. Me especializo en
+          <strong>gestión de redes sociales</strong> y desarrollo de <strong>sitios web simples y efectivos</strong> para pymes, negocios y emprendimientos.
+        </p>
+        <p class="mt-4">
+          Busco combinar creatividad, estrategia y diseño web para ayudar a marcas a destacar en el entorno digital.
+        </p>
+      </div>
+    </div>
+  </section>
 
-                const description = card.querySelector('.service-description');
-                const serviciosList = document.getElementById('servicios-list');
-                const allCards = serviciosList.querySelectorAll('.service-card');
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold text-cyan-400 text-center mb-12">Servicios</h3>
 
-                // Si ya está activo, cerrar todo
-                if (card.classList.contains('service-active')) {
-                    card.classList.remove('service-active');
-                    description.classList.add('hidden');
-                    allCards.forEach(c => {
-                        c.classList.remove('service-blur');
-                        c.style.zIndex = '';
-                        const desc = c.querySelector('.service-description');
-                        if (desc && c !== card) desc.classList.add('hidden');
-                    });
-                    serviciosList.classList.remove('relative');
-                    return;
-                }
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Marketing Digital -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Marketing Digital</h4>
+          <ul class="text-gray-300 space-y-2 list-disc pl-5">
+            <li>Gestión de redes sociales</li>
+            <li>Creación de contenido (plaquetas, reels, copys)</li>
+            <li>Email marketing básico</li>
+            <li>Análisis de competencia</li>
+            <li>Campañas en Meta Ads y Google Ads</li>
+          </ul>
+        </div>
 
-                // Cerrar cualquier otro activo y ocultar sus descripciones
-                allCards.forEach(c => {
-                    c.classList.remove('service-active');
-                    c.classList.add('service-blur');
-                    c.style.zIndex = '';
-                    const desc = c.querySelector('.service-description');
-                    if (desc) desc.classList.add('hidden');
-                });
+        <!-- Desarrollo Web -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Desarrollo Web</h4>
+          <ul class="text-gray-300 space-y-2 list-disc pl-5">
+            <li>Landing pages y sitios estáticos</li>
+            <li>Responsive design</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>WordPress y Tienda Nube</li>
+            <li>Soporte básico</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                // Activar el actual
-                card.classList.add('service-active');
-                card.classList.remove('service-blur');
-                card.style.zIndex = '10';
-                description.classList.remove('hidden');
-                serviciosList.classList.add('relative');
-            });
-        });
+  <!-- PROYECTOS -->
+ <section id="proyectos" class="py-16 bg-[#1e293b] text-white px-6"> 
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-10">Proyectos</h2>
 
-        // Salir del desenfoque al hacer clic fuera de los service-card
-        document.addEventListener('click', function(e) {
-            const serviciosList = document.getElementById('servicios-list');
-            if (!serviciosList) return;
-            const allCards = serviciosList.querySelectorAll('.service-card');
-            // Si el click NO fue dentro de un service-card ni en su descripción
-            if (![...allCards].some(card => card.contains(e.target))) {
-                allCards.forEach(card => {
-                    card.classList.remove('service-active');
-                    card.classList.remove('service-blur');
-                    card.style.zIndex = '';
-                    const desc = card.querySelector('.service-description');
-                    if (desc) desc.classList.add('hidden');
-                });
-                serviciosList.classList.remove('relative');
-            }
-        });
+    <div class="flex justify-center">
+      <div class="bg-[#0f172a] p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl max-w-md w-full">
+        <h3 class="text-2xl font-semibold mb-2 text-center">Fundación Ñawi</h3>
+        <p class="text-gray-300 mb-4 text-center">
+          Página institucional para una fundación latinoamericana con enfoque en filosofía, teología y pueblos originarios. Desarrollada en WordPress.
+        </p>
+        <div class="text-center">
+          <a href="https://ñawi.site" target="_blank" class="text-blue-400 hover:underline">Visitar sitio</a>
+        </div>
+      </div>
+    </div>
 
-        // Animaciones adicionales
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate elements on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+  </div>
+</section>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
 
-            // Observe all elements with the data-animate attribute
-            document.querySelectorAll('[data-animate]').forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                observer.observe(el);
-            });
+  <!-- CONTACTO -->
+ <section id="contacto" class="py-16 px-6 bg-[#0e1012] text-white">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Contacto</h2>
 
-            // Add animation to the hero section
-            const heroSection = document.querySelector('#hero');
-            if (heroSection) {
-                heroSection.style.opacity = 0;
-                heroSection.style.transform = 'translateY(20px)';
-                heroSection.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-                setTimeout(() => {
-                    heroSection.style.opacity = 1;
-                    heroSection.style.transform = 'translateY(0)';
-                }, 100);
-            }
-        });
+    <form
+      id="formulario-contacto"
+      action="https://formspree.io/f/xzzvgnoo"
+      method="POST"
+      class="flex flex-col gap-4 text-left"
+    >
+      <label>
+        <span class="block mb-1 text-sm text-gray-300">Nombre</span>
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        />
+      </label>
 
-        // Animación fade-in en scroll
-        function fadeInOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            const windowHeight = window.innerHeight;
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < windowHeight - 50) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-        window.addEventListener('scroll', fadeInOnScroll);
-        window.addEventListener('DOMContentLoaded', fadeInOnScroll);
+      <label>
+        <span class="block mb-1 text-sm text-gray-300">Email</span>
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        />
+      </label>
 
-        // Animación de iconos en "Hacemos brillar tu marca" solo en hover
-        document.querySelectorAll('#hacemos-brillar .group').forEach(card => {
-            const icon = card.querySelector('i');
-            const spin = card.querySelector('div.absolute');
-            card.addEventListener('mouseenter', () => {
-                icon.classList.add('animate-pulse');
-                icon.classList.add('scale-125');
-                if (spin) spin.classList.add('animate-spin');
-            });
-            card.addEventListener('mouseleave', () => {
-                icon.classList.remove('animate-pulse');
-                icon.classList.remove('scale-125');
-                if (spin) spin.classList.remove('animate-spin');
-            });
-        });
-    </script>
+      <label>
+        <span class="block mb-1 text-sm text-gray-300">Mensaje</span>
+        <textarea
+          name="message"
+          rows="4"
+          required
+          class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        ></textarea>
+      </label>
+
+      <button
+        type="submit"
+        class="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+  <!-- Mensaje de éxito oculto -->
+<div
+  id="mensaje-exito"
+  class="mt-4 text-green-400 font-semibold text-center hidden"
+>
+  ¡Mensaje enviado con éxito!
+</div>
+</section>
+
+  <!-- FOOTER -->
+<footer class="bg-[#0f172a] text-white py-8">
+  <div class="container mx-auto px-4 text-center">
+    <p class="mb-4">© 2025 Santiago Ramírez. Todos los derechos reservados.</p>
+
+    <div class="flex justify-center gap-6">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/santiagoooramirez/" target="_blank" rel="noopener noreferrer"
+         class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+     
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/santiago-ramirez-380630265/" target="_blank" rel="noopener noreferrer"
+         class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+
+       <!-- GitHub -->
+      <a href="https://github.com/Santiagooor" target="_blank" rel="noopener noreferrer"
+         class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+        <i class="fab fa-github text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    © 2025 Santiago Ramírez - Todos los derechos reservados
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function enviarFormulario(e) {
+      e.preventDefault();
+      document.getElementById("msg-enviado").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("msg-enviado").classList.add("hidden");
+      }, 3000);
+    }
+
+  </script>
+
 </body>
 <a
   href="https://wa.me/5493875233676" 
   target="_blank"
-  class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-white text-white hover:text-green-500 border-2 border-green-500 rounded-full p-3 shadow-lg transition duration-300 whatsapp-float"
+  class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-white text-white hover:text-green-500 border-2 border-green-500 rounded-full p-3 shadow-lg transition duration-300"
   aria-label="Chat en WhatsApp"
-  title="¡Escríbenos por WhatsApp!"
 >
   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.884.002-5.462-4.415-9.89-9.881-9.892-5.45 0-9.887 4.433-9.89 9.883-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.743-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.668.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.075-.149-.668-1.611-.916-2.207-.242-.579-.487-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413z"/>
   </svg>
 </a>
-<style>
-/* Servicios: desenfoque y resalte */
-.service-blur {
-    filter: blur(3px) grayscale(0.3) brightness(0.8);
-    opacity: 0.5;
-    pointer-events: none;
-    transition: filter 0.4s, opacity 0.4s;
-}
-.service-active {
-    box-shadow: 0 0 0 4px #a78bfa, 0 8px 32px 0 rgba(87,34,210,0.2);
-    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-    color: #fff;
-    transform: scale(1.04);
-    opacity: 1 !important;
-    filter: none !important;
-    pointer-events: auto;
-    transition: box-shadow 0.4s, background 0.4s, transform 0.4s;
-}
-.service-active .text-purple-900,
-.service-active .text-gray-700,
-.service-active .text-purple-600 {
-    color: #fff !important;
-}
-.service-active .service-description {
-    color: #fff !important;
-}
-.service-active .service-link span {
-    color: #fff !important;
-}
-.service-active .service-link i {
-    color: #fff !important;
-}
 
-/* Mejoras de experiencia y animaciones */
-html {
-    scroll-behavior: smooth;
-}
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Navbar sticky shadow */
-nav.bg-black {
-    box-shadow: 0 2px 16px 0 rgba(87,34,210,0.08);
-}
-/* Botón WhatsApp animado */
-.whatsapp-float {
-    animation: bounce 2s infinite;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0);}
-    50% { transform: translateY(-8px);}
-}
-/* Card hover efecto glass */
-.service-card {
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter 0.3s;
-}
-.service-card:hover {
-    backdrop-filter: blur(2px);
-}
-/* Footer mejora */
-footer {
-    box-shadow: 0 -2px 16px 0 rgba(87,34,210,0.08);
-}
-</style>
+</html>
