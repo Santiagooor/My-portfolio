@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Santiago Ramírez</title>
+  <!-- Eliminado el espacio al final de la URL -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Eliminado el espacio al final de la URL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
@@ -24,12 +26,11 @@
         <!-- DESCARGA CV (NAVBAR) -->
         <li>
           <a
-            href="Curriculum Santiago Ramirez.pdf"  <!-- TODO: actualizá la ruta del PDF -->
+            href="Curriculum Santiago Ramirez.pdf"
             download
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-2 bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold
-                   hover:bg-cyan-300 transition shadow focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            class="inline-flex items-center gap-2 bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition shadow focus:outline-none focus:ring-2 focus:ring-cyan-400"
             aria-label="Descargar CV en PDF"
             title="Descargar CV (PDF)"
           >
@@ -60,7 +61,7 @@
 
         <!-- CTA secundario: Descargar CV -->
         <a
-          href="./docs/Santiago-Ramirez-CV.pdf"  <!-- TODO: misma ruta del PDF -->
+          href="./docs/Santiago-Ramirez-CV.pdf"
           download
           target="_blank"
           rel="noopener"
@@ -104,98 +105,4 @@
       <h3 class="text-3xl font-bold text-cyan-400 text-center mb-12">Servicios</h3>
       <div class="grid md:grid-cols-2 gap-10">
         <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Marketing Digital</h4>
-          <ul class="text-gray-300 space-y-2 list-disc pl-5">
-            <li>Gestión de redes sociales</li>
-            <li>Creación de contenido (plaquetas, reels, copys)</li>
-            <li>Email marketing básico</li>
-            <li>Análisis de competencia</li>
-            <li>Campañas en Meta Ads y Google Ads</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Desarrollo Web</h4>
-          <ul class="text-gray-300 space-y-2 list-disc pl-5">
-            <li>Landing pages y sitios estáticos</li>
-            <li>Responsive design</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>WordPress y Tienda Nube</li>
-            <li>Soporte básico</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="py-16 bg-[#1e293b] text-white px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-10">Proyectos</h2>
-      <div class="flex justify-center">
-        <div class="bg-[#0f172a] p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl max-w-md w-full">
-          <h3 class="text-2xl font-semibold mb-2 text-center">Fundación Ñawi</h3>
-          <p class="text-gray-300 mb-4 text-center">
-            Página institucional para una fundación latinoamericana con enfoque en filosofía, teología y pueblos originarios. Desarrollada en WordPress.
-          </p>
-          <div class="text-center">
-            <a href="https://ñawi.site" target="_blank" class="text-blue-400 hover:underline">Visitar sitio</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-16 px-6 bg-[#0e1012] text-white">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6 text-cyan-400">Contacto</h2>
-      <form id="formulario-contacto" action="https://formspree.io/f/xzzvgnoo" method="POST" class="flex flex-col gap-4 text-left">
-        <label>
-          <span class="block mb-1 text-sm text-gray-300">Nombre</span>
-          <input type="text" name="name" required class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
-        </label>
-        <label>
-          <span class="block mb-1 text-sm text-gray-300">Email</span>
-          <input type="email" name="email" required class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
-        </label>
-        <label>
-          <span class="block mb-1 text-sm text-gray-300">Mensaje</span>
-          <textarea name="message" rows="4" required class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
-        </label>
-        <button type="submit" class="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition">
-          Enviar
-        </button>
-      </form>
-      <!-- Mensaje de éxito -->
-      <div id="mensaje-exito" class="mt-4 text-green-400 font-semibold text-center hidden">¡Mensaje enviado con éxito!</div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-[#0f172a] text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p class="mb-4">© 2025 Santiago Ramírez. Todos los derechos reservados.</p>
-      <div class="flex justify-center gap-6">
-        <a href="https://www.instagram.com/santiagoooramirez/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
-          <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/santiago-ramirez-380630265/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/Santiagooor" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    // Demo de feedback de envío (si lo necesitás)
-    const form = document.getElementById("formulario-contacto");
-    const okMsg = document.getElementById("mensaje-exito");
-    if (form) {
-      form.addEventListener("submit", () => {
-        okMsg.classList.remove("hidden");
-        setTimeout(() => okMsg.classList.add("hidden")
+          <h4 class="
