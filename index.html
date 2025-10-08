@@ -4,47 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Santiago Ramírez</title>
-  <!-- Eliminado el espacio al final de la URL -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Eliminado el espacio al final de la URL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-
 <body class="bg-gray-950 text-white font-sans">
+
   <!-- NAVBAR -->
-  <header class="w-full fixed top-0 z-50 bg-gray-900/95 backdrop-blur shadow">
+  <header class="w-full fixed top-0 z-50 bg-gray-900 shadow">
     <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-cyan-400">Santiago Ramírez</h1>
-
-      <ul class="hidden md:flex items-center space-x-6 text-white font-medium">
+      <ul class="hidden md:flex space-x-6 text-white font-medium items-center">
         <li><a href="#inicio" class="hover:text-cyan-400">Inicio</a></li>
         <li><a href="#sobre-mi" class="hover:text-cyan-400">Sobre mí</a></li>
         <li><a href="#servicios" class="hover:text-cyan-400">Servicios</a></li>
         <li><a href="#proyectos" class="hover:text-cyan-400">Proyectos</a></li>
         <li><a href="#contacto" class="hover:text-cyan-400">Contacto</a></li>
-
-        <!-- DESCARGA CV (NAVBAR) -->
+        <!-- Botón para descargar el CV -->
         <li>
           <a
             href="Curriculum Santiago Ramirez.pdf"
             download
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center gap-2 bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition shadow focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-label="Descargar CV en PDF"
-            title="Descargar CV (PDF)"
+            class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+            aria-label="Descargar currículum en PDF"
           >
-            <i class="fa-solid fa-file-arrow-down"></i>
             Descargar CV
           </a>
         </li>
       </ul>
+      <!-- Si deseas versión móvil con botón de descarga, puedes agregarlo aquí también -->
     </nav>
   </header>
 
+  <!-- Resto del contenido sin cambios significativos, solo corregido el JS -->
   <!-- Inicio -->
-  <section id="inicio" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 py-24 bg-[#0e1012] text-white">
-    <!-- Texto -->
+  <section id="inicio" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 pt-20 pb-16 bg-[#0e1012] text-white">
     <div class="text-center md:text-left max-w-xl">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
         Hola, soy <span class="text-cyan-400">Santiago Ramírez</span>
@@ -52,32 +45,13 @@
       <p class="text-lg text-gray-300 mb-6">
         Técnico en Marketing Digital & Desarrollador Web. Ayudo a emprendedores y pymes a tener presencia online con estrategia y diseño.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
-        <a href="#contacto"
-           class="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg shadow hover:bg-cyan-300 transition font-semibold">
-          Hablemos
-        </a>
-
-        <!-- CTA secundario: Descargar CV -->
-        <a
-          href="./docs/Santiago-Ramirez-CV.pdf"
-          download
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center justify-center gap-2 border border-cyan-400 text-cyan-400 px-6 py-3 rounded-lg hover:bg-cyan-400 hover:text-gray-900 transition font-semibold"
-        >
-          <i class="fa-solid fa-file-arrow-down"></i>
-          Descargar CV
-        </a>
-      </div>
+      <a href="#contacto" class="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg shadow hover:bg-cyan-300 transition font-semibold">
+        Hablemos
+      </a>
     </div>
-
-    <!-- Foto -->
     <div>
       <img
-        src="Yo.jpg"
-        alt="Foto de Santiago Ramírez"
+        src="Yo.jpg" alt="Santiago Ramírez"
         class="w-48 h-48 md:w-60 md:h-60 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl border-4 border-cyan-400"
       />
     </div>
@@ -105,4 +79,159 @@
       <h3 class="text-3xl font-bold text-cyan-400 text-center mb-12">Servicios</h3>
       <div class="grid md:grid-cols-2 gap-10">
         <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-          <h4 class="
+          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Marketing Digital</h4>
+          <ul class="text-gray-300 space-y-2 list-disc pl-5">
+            <li>Gestión de redes sociales</li>
+            <li>Creación de contenido (plaquetas, reels, copys)</li>
+            <li>Email marketing básico</li>
+            <li>Análisis de competencia</li>
+            <li>Campañas en Meta Ads y Google Ads</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-bold text-cyan-300 mb-4">Desarrollo Web</h4>
+          <ul class="text-gray-300 space-y-2 list-disc pl-5">
+            <li>Landing pages y sitios estáticos</li>
+            <li>Responsive design</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>WordPress y Tienda Nube</li>
+            <li>Soporte básico</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="py-16 bg-[#1e293b] text-white px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10">Proyectos</h2>
+      <div class="flex justify-center">
+        <div class="bg-[#0f172a] p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl max-w-md w-full">
+          <h3 class="text-2xl font-semibold mb-2 text-center">Fundación Ñawi</h3>
+          <p class="text-gray-300 mb-4 text-center">
+            Página institucional para una fundación latinoamericana con enfoque en filosofía, teología y pueblos originarios. Desarrollada en WordPress.
+          </p>
+          <div class="text-center">
+            <a href="https://ñawi.site" target="_blank" class="text-blue-400 hover:underline">Visitar sitio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-16 px-6 bg-[#0e1012] text-white">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-cyan-400">Contacto</h2>
+      <form
+        id="formulario-contacto"
+        action="https://formspree.io/f/xzzvgnoo"
+        method="POST"
+        class="flex flex-col gap-4 text-left"
+      >
+        <label>
+          <span class="block mb-1 text-sm text-gray-300">Nombre</span>
+          <input
+            type="text"
+            name="name"
+            required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          />
+        </label>
+        <label>
+          <span class="block mb-1 text-sm text-gray-300">Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          />
+        </label>
+        <label>
+          <span class="block mb-1 text-sm text-gray-300">Mensaje</span>
+          <textarea
+            name="message"
+            rows="4"
+            required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+    <div id="mensaje-exito" class="mt-4 text-green-400 font-semibold text-center hidden">
+      ¡Mensaje enviado con éxito!
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0f172a] text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">© 2025 Santiago Ramírez. Todos los derechos reservados.</p>
+      <div class="flex justify-center gap-6">
+        <a href="https://www.instagram.com/santiagoooramirez/" target="_blank" rel="noopener noreferrer"
+           class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/santiago-ramirez-380630265/" target="_blank" rel="noopener noreferrer"
+           class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/Santiagooor" target="_blank" rel="noopener noreferrer"
+           class="text-white hover:text-blue-400 transition transform hover:scale-110 duration-300">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a
+    href="https://wa.me/5493875233676"
+    target="_blank"
+    class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-white text-white hover:text-green-500 border-2 border-green-500 rounded-full p-3 shadow-lg transition duration-300"
+    aria-label="Chat en WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.884.002-5.462-4.415-9.89-9.881-9.892-5.45 0-9.887 4.433-9.89 9.883-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.743-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.668.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.075-.149-.668-1.611-.916-2.207-.242-.579-.487-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413z"/>
+    </svg>
+  </a>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("formulario-contacto").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = this;
+      const successMessage = document.getElementById("mensaje-exito");
+
+      // Enviar datos con fetch
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.classList.remove("hidden");
+          form.reset();
+          setTimeout(() => successMessage.classList.add("hidden"), 3000);
+        } else {
+          alert("Hubo un error al enviar el mensaje.");
+        }
+      })
+      .catch(() => {
+        alert("Error de conexión. Inténtalo de nuevo.");
+      });
+    });
+  </script>
+
+</body>
+</html>
