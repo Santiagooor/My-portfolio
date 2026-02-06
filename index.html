@@ -5,77 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Santiago Ramírez</title>
   <meta name="description" content="Portfolio de Santiago Ramírez: marketing digital, desarrollo web y proyectos para pymes y emprendedores." />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body class="bg-gray-950 text-white font-sans">
 
   <!-- NAVBAR -->
- <!-- NAVBAR -->
-<header class="w-full fixed top-0 z-50 bg-gray-900/95 backdrop-blur shadow">
-  <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <!-- Branding -->
-    <a href="#inicio" class="text-2xl font-bold text-cyan-400">Santiago Ramírez</a>
+  <header class="w-full fixed top-0 z-50 bg-gray-900/95 backdrop-blur shadow">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#inicio" class="text-2xl font-bold text-cyan-400">Santiago Ramírez</a>
 
-    <!-- Desktop nav -->
-    <ul class="hidden md:flex space-x-6 text-white font-medium items-center">
-      <li><a href="#inicio" class="hover:text-cyan-400">Inicio</a></li>
-      <li><a href="#sobre-mi" class="hover:text-cyan-400">Sobre mí</a></li>
-      <li><a href="#servicios" class="hover:text-cyan-400">Servicios</a></li>
-      <li><a href="#proyectos" class="hover:text-cyan-400">Proyectos</a></li>
-      <li><a href="#contacto" class="hover:text-cyan-400">Contacto</a></li>
-      <li>
-        <a
-          href="Curriculum-Santiago-Ramirez.pdf"
-          download
-          class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
-          aria-label="Descargar currículum en PDF"
-        >Descargar CV</a>
-      </li>
-    </ul>
+      <ul class="hidden md:flex space-x-6 text-white font-medium items-center">
+        <li><a href="#inicio" class="hover:text-cyan-400">Inicio</a></li>
+        <li><a href="#sobre-mi" class="hover:text-cyan-400">Sobre mí</a></li>
+        <li><a href="#servicios" class="hover:text-cyan-400">Servicios</a></li>
+        <li><a href="#proyectos" class="hover:text-cyan-400">Proyectos</a></li>
+        <li><a href="#contacto" class="hover:text-cyan-400">Contacto</a></li>
+        <li>
+          <a
+            href="Curriculum-Santiago-Ramirez.pdf"
+            download
+            class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+            aria-label="Descargar currículum en PDF"
+          >Descargar CV</a>
+        </li>
+      </ul>
 
-    <!-- Hamburger (mobile) -->
-    <button
-      id="menu-toggle"
-      class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 hover:bg-white/5 transition"
-      aria-label="Abrir menú"
-      aria-controls="mobile-menu"
-      aria-expanded="false"
+      <button
+        id="menu-toggle"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 hover:bg-white/5 transition"
+        aria-label="Abrir menú"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        type="button"
+      >
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="md:hidden bg-gray-900/95 backdrop-blur border-t border-white/10 hidden"
     >
-      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-  </nav>
+      <ul class="px-4 py-4 space-y-2 text-white font-medium">
+        <li><a href="#inicio" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+        <li><a href="#sobre-mi" class="block px-3 py-2 rounded hover:bg-white/5">Sobre mí</a></li>
+        <li><a href="#servicios" class="block px-3 py-2 rounded hover:bg-white/5">Servicios</a></li>
+        <li><a href="#proyectos" class="block px-3 py-2 rounded hover:bg-white/5">Proyectos</a></li>
+        <li><a href="#contacto" class="block px-3 py-2 rounded hover:bg-white/5">Contacto</a></li>
+        <li class="pt-2">
+          <a
+            href="Curriculum-Santiago-Ramirez.pdf"
+            download
+            class="block text-center bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+          >Descargar CV</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-  <!-- Mobile panel -->
-  <div
-    id="mobile-menu"
-    class="md:hidden bg-gray-900/95 backdrop-blur border-t border-white/10 hidden"
-  >
-    <ul class="px-4 py-4 space-y-2 text-white font-medium">
-      <li><a href="#inicio" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
-      <li><a href="#sobre-mi" class="block px-3 py-2 rounded hover:bg-white/5">Sobre mí</a></li>
-      <li><a href="#servicios" class="block px-3 py-2 rounded hover:bg-white/5">Servicios</a></li>
-      <li><a href="#proyectos" class="block px-3 py-2 rounded hover:bg-white/5">Proyectos</a></li>
-      <li><a href="#contacto" class="block px-3 py-2 rounded hover:bg-white/5">Contacto</a></li>
-      <li class="pt-2">
-        <a
-          href="Curriculum-Santiago-Ramirez.pdf"
-          download
-          class="block text-center bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
-        >Descargar CV</a>
-      </li>
-    </ul>
-  </div>
-</header>
   <!-- INICIO -->
-  <section id="inicio" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 pt-28 pb-16 bg-[#0e1012] text-white">
+  <section id="inicio" class="scroll-mt-28 min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10 px-6 pt-28 pb-16 bg-[#0e1012] text-white">
     <div class="text-center md:text-left max-w-xl">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
         Hola, soy <span class="text-cyan-400">Santiago Ramírez</span>
@@ -87,17 +86,19 @@
         Hablemos
       </a>
     </div>
+
     <div>
       <img
         src="Yo.jpg"
         alt="Foto de perfil de Santiago Ramírez"
         class="w-48 h-48 md:w-60 md:h-60 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl border-4 border-cyan-400"
+        loading="lazy"
       />
     </div>
   </section>
 
   <!-- SOBRE MÍ -->
-  <section id="sobre-mi" class="pt-20 px-6">
+  <section id="sobre-mi" class="scroll-mt-28 pt-20 px-6">
     <h2 class="text-3xl font-semibold mb-8 text-center">Sobre mí</h2>
     <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
       <div class="text-center md:text-left">
@@ -113,11 +114,12 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="py-16 px-6">
+  <section id="servicios" class="scroll-mt-28 py-16 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 class="text-3xl font-bold text-cyan-400 text-center mb-12">Servicios</h3>
+
       <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-[1.02] transition-transform">
           <h4 class="text-2xl font-bold text-cyan-300 mb-4">Marketing Digital</h4>
           <ul class="text-gray-300 space-y-2 list-disc pl-5">
             <li>Gestión de redes sociales</li>
@@ -127,7 +129,8 @@
             <li>Campañas en Meta Ads y Google Ads</li>
           </ul>
         </div>
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-[1.02] transition-transform">
           <h4 class="text-2xl font-bold text-cyan-300 mb-4">Desarrollo Web</h4>
           <ul class="text-gray-300 space-y-2 list-disc pl-5">
             <li>Landing pages y sitios estáticos</li>
@@ -141,42 +144,119 @@
     </div>
   </section>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="py-16 bg-[#1e293b] text-white px-6">
+  <!-- PROYECTOS (MEJORADO + MINIATURAS + CHROMA) -->
+  <section id="proyectos" class="scroll-mt-28 py-16 bg-[#1e293b] text-white px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl font-bold mb-10 text-center">Proyectos</h2>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Card 1 -->
-        <article class="bg-[#0f172a] p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl">
-          <h3 class="text-2xl font-semibold mb-2 text-center">Fundación Ñawi</h3>
-          <p class="text-gray-300 mb-4 text-center">
-            Página institucional para una fundación latinoamericana con enfoque en filosofía, teología y pueblos originarios. Desarrollada en WordPress.
-          </p>
-          <div class="text-center">
-            <a href="https://ñawi.site" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Visitar sitio</a>
-            <!-- Si el dominio con ñ diera problemas de compatibilidad, usar punycode: https://xn--awi-0ma.site -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Proyecto: Chroma -->
+        <article class="bg-[#0f172a] rounded-xl shadow-lg overflow-hidden transition transform hover:scale-[1.02] hover:shadow-xl border border-white/5">
+          <a href="https://estudiochroma.com/" target="_blank" rel="noopener noreferrer" class="block">
+            <img
+              src="assets/projects/chroma.jpg"
+              alt="Miniatura del sitio Estudio Chroma"
+              class="w-full h-44 object-cover"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Estudio Chroma</h3>
+            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+              Sitio web para un estudio de arte multidisciplinario en Catamarca. Enfoque en una estética infantil y cálida,
+              mejoras de UX para inscripción a talleres y optimización de sección de contacto.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">WordPress</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">Elementor</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">CSS</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">UX/UI</span>
+            </div>
+
+            <div class="flex gap-3">
+              <a href="https://estudiochroma.com/" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-cyan-500 text-gray-900 font-semibold hover:bg-cyan-400 transition text-sm">
+                Ver sitio
+              </a>
+            </div>
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="bg-[#0f172a] p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl">
-          <h3 class="text-2xl font-semibold mb-2 text-center">Acrux Agency</h3>
-          <p class="text-gray-300 mb-4 text-center">
-            Acrux Agency es una agencia digital creada por jóvenes profesionales del marketing y el diseño. Hacemos brillar a las marcas con estrategia, diseño web moderno y comunicación efectiva. Sitio desarrollado en WordPress.
-          </p>
-          <div class="text-center">
-            <a href="https://acruxagency.com/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Visitar sitio</a>
+        <!-- Proyecto: Fundación Ñawi -->
+        <article class="bg-[#0f172a] rounded-xl shadow-lg overflow-hidden transition transform hover:scale-[1.02] hover:shadow-xl border border-white/5">
+          <a href="https://xn--awi-0ma.site" target="_blank" rel="noopener noreferrer" class="block">
+            <img
+              src="assets/projects/nawi.jpg"
+              alt="Miniatura del sitio Fundación Ñawi"
+              class="w-full h-44 object-cover"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Fundación Ñawi</h3>
+            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+              Web institucional para una fundación latinoamericana con enfoque en filosofía, teología y pueblos originarios.
+              Desarrollo en WordPress con identidad visual inspirada en la wiphala.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">WordPress</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">Contenido</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">Diseño</span>
+            </div>
+
+            <div class="flex gap-3">
+              <a href="https://xn--awi-0ma.site" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-cyan-500 text-gray-900 font-semibold hover:bg-cyan-400 transition text-sm">
+                Ver sitio
+              </a>
+            </div>
           </div>
         </article>
+
+        <!-- Proyecto: Acrux Agency -->
+        <article class="bg-[#0f172a] rounded-xl shadow-lg overflow-hidden transition transform hover:scale-[1.02] hover:shadow-xl border border-white/5">
+          <a href="https://acruxagency.com/" target="_blank" rel="noopener noreferrer" class="block">
+            <img
+              src="assets/projects/acrux.jpg"
+              alt="Miniatura del sitio Acrux Agency"
+              class="w-full h-44 object-cover"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Acrux Agency</h3>
+            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+              Sitio para agencia digital. Presentación de servicios, propuesta de valor y enfoque en estrategia, diseño web moderno
+              y comunicación efectiva para pymes.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">WordPress</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">Branding</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-white/10">Marketing</span>
+            </div>
+
+            <div class="flex gap-3">
+              <a href="https://acruxagency.com/" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-cyan-500 text-gray-900 font-semibold hover:bg-cyan-400 transition text-sm">
+                Ver sitio
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="py-16 px-6 bg-[#0e1012] text-white">
+  <section id="contacto" class="scroll-mt-28 py-16 px-6 bg-[#0e1012] text-white">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6 text-cyan-400">Contacto</h2>
+
       <form
         id="formulario-contacto"
         action="https://formspree.io/f/xzzvgnoo"
@@ -186,41 +266,28 @@
       >
         <label>
           <span class="block mb-1 text-sm text-gray-300">Nombre</span>
-          <input
-            type="text"
-            name="name"
-            required
-            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-required="true"
-          />
+          <input type="text" name="name" required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </label>
+
         <label>
           <span class="block mb-1 text-sm text-gray-300">Email</span>
-          <input
-            type="email"
-            name="email"
-            required
-            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-required="true"
-          />
+          <input type="email" name="email" required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
         </label>
+
         <label>
           <span class="block mb-1 text-sm text-gray-300">Mensaje</span>
-          <textarea
-            name="message"
-            rows="4"
-            required
-            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            aria-required="true"
-          ></textarea>
+          <textarea name="message" rows="4" required
+            class="w-full px-4 py-2 bg-[#1a1c1f] text-white rounded border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
         </label>
-        <button
-          type="submit"
-          class="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition"
-        >
+
+        <button type="submit"
+          class="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition">
           Enviar
         </button>
       </form>
+
       <div id="mensaje-exito" class="mt-4 text-green-400 font-semibold text-center hidden" role="status" aria-live="polite">
         ¡Mensaje enviado con éxito!
       </div>
@@ -264,43 +331,43 @@
   <!-- JS -->
   <script>
     // ——— Menú móvil ———
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
 
-  function closeMenu() {
-    mobileMenu.classList.add('hidden');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-    menuToggle.setAttribute('aria-expanded', 'false');
-  }
+    function closeMenu() {
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    }
 
-  function openMenu() {
-    mobileMenu.classList.remove('hidden');
-    iconOpen.classList.add('hidden');
-    iconClose.classList.remove('hidden');
-    menuToggle.setAttribute('aria-expanded', 'true');
-  }
+    function openMenu() {
+      mobileMenu?.classList.remove('hidden');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+      menuToggle?.setAttribute('aria-expanded', 'true');
+    }
 
-  menuToggle?.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    isOpen ? closeMenu() : openMenu();
-  });
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = !mobileMenu?.classList.contains('hidden');
+      isOpen ? closeMenu() : openMenu();
+    });
 
-  // Cerrar el menú al hacer click en cualquier enlace del panel móvil
-  mobileMenu?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => closeMenu());
-  });
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => closeMenu());
+    });
 
-  // Opcional: cerrar si se redimensiona a md o más
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) closeMenu();
-  });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+
+    // ——— Formulario (Formspree) ———
     const form = document.getElementById("formulario-contacto");
     const successMessage = document.getElementById("mensaje-exito");
 
-    form.addEventListener("submit", function(e) {
+    form?.addEventListener("submit", function(e) {
       e.preventDefault();
 
       fetch(form.action, {
@@ -310,9 +377,9 @@
       })
       .then(response => {
         if (response.ok) {
-          successMessage.classList.remove("hidden");
+          successMessage?.classList.remove("hidden");
           form.reset();
-          setTimeout(() => successMessage.classList.add("hidden"), 3000);
+          setTimeout(() => successMessage?.classList.add("hidden"), 3000);
         } else {
           alert("Hubo un error al enviar el mensaje.");
         }
